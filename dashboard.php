@@ -4,6 +4,11 @@ if (!isset($_SESSION['admin'])) {
     header("Location: index.php");
     exit();
 }
+
+require "php/db.php";
+
+$query = "SELECT * FROM students ORDER BY id DESC";
+$result = $conn->query($query);
 ?>
 
 
@@ -34,16 +39,32 @@ if (!isset($_SESSION['admin'])) {
                 <th>Date de Naissance</th>
                 <th>Email</th>
                 <th>Spécialisation</th>
+                <th>Update</th>
+                <th>Delete</th>
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            <?php if ($result && $result->num_rows > 0): ?>
+                <?php while($student = $result->fetch_assoc()): ?>
+                <tr>
+                    <td><?php echo $student['id']; ?></td>
+                    <td><?php echo htmlspecialchars($student['matricule']); ?></td>
+                    <td><?php echo htmlspecialchars($student['nom']); ?></td>
+                    <td><?php echo htmlspecialchars($student['prenom']); ?></td>
+                    <td><?php echo htmlspecialchars($student['date_naissance']); ?></td>
+                    <td><?php echo htmlspecialchars($student['email']); ?></td>
+                    <td><?php echo htmlspecialchars($student['specialisation']); ?></td>
+                    <td>
+                        <button class="edit-btn" onclick="editStudent(<?php echo $student['id']; ?>)">Edit</button>
+                    </td>
+                    <td>
+                        <button class="delete-btn" onclick="deleteStudent(<?php echo $student['id']; ?>)">Delete</button>
+                    </td>
+                </tr>
+                <?php endwhile; ?>
+            <?php else: ?>
+                <tr>
+                    <td colspan="8" style="text-align: center;">No students found</td>
+                </tr>
+            <?php endif; ?>
         </table>
 
         <div class="add-student-panel">

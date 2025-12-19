@@ -96,7 +96,7 @@ th, td {
     gap: 10px;
 }
 
-.add-student-panel .buttons button{
+.add-student-panel .buttons button, .edit-btn, .delete-btn{
     padding: 7px 15px;
     background-color: rgb(83, 182, 83);
     color: white;
@@ -106,6 +106,14 @@ th, td {
 }
 
 .add-student-panel .buttons .cancel-btn{
+    background-color: rgb(182, 83, 83);
+}
+
+.edit-btn{
+    background-color: rgb(83, 169, 182);
+}
+
+.delete-btn{
     background-color: rgb(182, 83, 83);
 }
 
