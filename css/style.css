@@ -67,6 +67,7 @@ th, td {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 30%;
+    display: none;
 }
 
 .add-student-panel .inputs{
@@ -106,4 +107,26 @@ th, td {
 
 .add-student-panel .buttons .cancel-btn{
     background-color: rgb(182, 83, 83);
+}
+
+.logout{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 7px 15px;
+    background-color: rgb(247, 84, 84);
+    color: white;
+    border: none;
+    border-radius: 3px;
+
+}
+
+.logout img{
+    width: 20px;
 }

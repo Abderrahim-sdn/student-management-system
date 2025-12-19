@@ -1,13 +1,30 @@
+<?php
+session_start();
+if (!isset($_SESSION['admin'])) {
+    header("Location: index.php");
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
     <title>Students DB Management</title>
 </head>
 <body>
     <main>
+
+        <a href="php/logout.php">
+            <div class="logout">
+                Logout
+                <img src="imgs/logout.png">
+            </div>
+        </a>
+
         <table>
             <tr>
                 <th>ID</th>
@@ -32,26 +49,26 @@
         <div class="add-student-panel">
             <p class="title">Add New Student</p>
             <hr>
-            <div class="inputs">
 
+            <form class="inputs" action="">
                 <div class="bloc">
                     <label for="matricule">Matricule</label>
-                    <input type="text" id="matricule">
+                    <input type="text" id="matricule" required>
                 </div>
 
                 <div class="bloc">
                     <label for="nom">Nom</label>
-                    <input type="text" id="nom">
+                    <input type="text" id="nom" required>
                 </div>
 
                 <div class="bloc">
                     <label for="prenom">Prenom</label>
-                    <input type="text" id="prenom">
+                    <input type="text" id="prenom" required>
                 </div>
 
                 <div class="bloc">
                     <label for="datenss">Date de Naissance</label>
-                    <input type="text" id="datenss">
+                    <input type="text" id="datenss" required>
                 </div>
 
                 <div class="bloc">
@@ -61,10 +78,10 @@
 
                 <div class="bloc">
                     <label for="specialite">Spécialisation</label>
-                    <input type="text" id="specialite">
+                    <input type="text" id="specialite" required>
                 </div>
+            </form>
 
-            </div>
             <div class="buttons">
                 <button class="cancel-btn">Cancel</button>
                 <button class="add-btn">Add</button>
