@@ -1,0 +1,10 @@
+# Ignore XAMPP config
+/.vscode/
+/.idea/
+
+# Ignore database credentials
+php/db.php
+
+# Ignore OS files
+Thumbs.db
+.DS_Store
