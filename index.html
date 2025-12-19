@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Students DB Management</title>
+</head>
+<body>
+    <main>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Matricule</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Date de Naissance</th>
+                <th>Email</th>
+                <th>Spécialisation</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <div class="add-student-panel">
+            <p class="title">Add New Student</p>
+            <hr>
+            <div class="inputs">
+
+                <div class="bloc">
+                    <label for="matricule">Matricule</label>
+                    <input type="text" id="matricule">
+                </div>
+
+                <div class="bloc">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom">
+                </div>
+
+                <div class="bloc">
+                    <label for="prenom">Prenom</label>
+                    <input type="text" id="prenom">
+                </div>
+
+                <div class="bloc">
+                    <label for="datenss">Date de Naissance</label>
+                    <input type="text" id="datenss">
+                </div>
+
+                <div class="bloc">
+                    <label for="email">Email</label>
+                    <input type="text" id="email">
+                </div>
+
+                <div class="bloc">
+                    <label for="specialite">Spécialisation</label>
+                    <input type="text" id="specialite">
+                </div>
+
+            </div>
+            <div class="buttons">
+                <button class="cancel-btn">Cancel</button>
+                <button class="add-btn">Add</button>
+            </div>
+        </div>
+
+        <div class="add-student-btn">
+            <img src="imgs/add.png" alt="Add Button">
+        </div>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
