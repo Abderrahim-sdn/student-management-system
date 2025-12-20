@@ -1,7 +1,13 @@
 let addStudentPanel = document.querySelector(".add-student-panel");
 let addStudentBtn = document.querySelector(".add-student-btn");
-let addAddPanel = document.querySelector(".add-btn");
-let cancelAddPanel = document.querySelector(".cancel-btn");
+let addAddPanel = document.querySelector(".add-add-btn");
+let cancelAddPanel = document.querySelector(".cancel-add-btn");
+
+let editStudentPanel = document.querySelector(".edit-student-panel");
+let editStudentBtn = document.querySelectorAll(".edit-btn");
+let addEditPanel = document.querySelector(".add-edit-btn");
+let cancelEditPanel = document.querySelector(".cancel-edit-btn");
+
 let studentForm = document.getElementById("studentForm");
 
 addStudentBtn.addEventListener("click", () => {
@@ -24,6 +30,15 @@ function showAddStudentPanel() {
 
 function hideAddStudentPanel() {
     addStudentPanel.style.display = "none";
+}
+
+
+function showEditStudentPanel() {
+    editStudentPanel.style.display = "block";
+}
+
+function hideEditStudentPanel() {
+    editStudentPanel.style.display = "none";
 }
 
 function addStudent() {
@@ -72,5 +87,9 @@ function deleteStudent(id) {
 }
 
 function editStudent(id) {
-    showAddStudentPanel();
+    showEditStudentPanel();
 }
+
+cancelEditPanel.addEventListener("click", () => {
+    hideEditStudentPanel();
+});

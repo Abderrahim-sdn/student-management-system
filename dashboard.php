@@ -104,8 +104,50 @@ $result = $conn->query($query);
             </form>
 
             <div class="buttons">
-                <button class="cancel-btn">Cancel</button>
-                <button class="add-btn">Add</button>
+                <button class="cancel-add-btn">Cancel</button>
+                <button class="add-add-btn">Add</button>
+            </div>
+        </div>
+
+        <div class="edit-student-panel">
+            <p class="title">Edit Student</p>
+            <hr>
+
+            <form class="inputs" action="">
+                <div class="bloc">
+                    <label for="matricule">Matricule</label>
+                    <input type="text" id="matricule" required>
+                </div>
+
+                <div class="bloc">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" required>
+                </div>
+
+                <div class="bloc">
+                    <label for="prenom">Prenom</label>
+                    <input type="text" id="prenom" required>
+                </div>
+
+                <div class="bloc">
+                    <label for="datenss">Date de Naissance</label>
+                    <input type="text" id="datenss" required>
+                </div>
+
+                <div class="bloc">
+                    <label for="email">Email</label>
+                    <input type="text" id="email">
+                </div>
+
+                <div class="bloc">
+                    <label for="specialite">Spécialisation</label>
+                    <input type="text" id="specialite" required>
+                </div>
+            </form>
+
+            <div class="buttons">
+                <button class="cancel-edit-btn">Cancel</button>
+                <button class="save-edit-btn">save</button>
             </div>
         </div>
 
